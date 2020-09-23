@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Attributes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,7 +44,7 @@ namespace DefaultNamespace
         public List<Collider2D> CurrentlyTouching = new List<Collider2D>();
         public List<Collider2D> CurrentlySeeing = new List<Collider2D>();
 
-        private void Start()
+        private void Awake()
         {
             _trailRenderer = GetComponent<TrailRenderer>();
             SeeCollider = SeeGO.GetComponent<CircleCollider2D>();
@@ -71,6 +69,10 @@ namespace DefaultNamespace
                 };
             TouchGO.GetComponent<ForwardOnCollision>().OnTriggerExit2DForward +=
                 coll => CurrentlyTouching.Remove(coll);
+        }
+
+        private void Start()
+        {
             Reset();
         }
 
@@ -113,6 +115,7 @@ namespace DefaultNamespace
 
             Hunger -= LatestCost;
         }
+
         private void OnDrawGizmos()
         {
             Gizmos.color = new Color(0f, 1f, 0f, 0.2f);

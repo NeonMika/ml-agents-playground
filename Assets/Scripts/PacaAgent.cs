@@ -1,5 +1,4 @@
-﻿using System;
-using Attributes;
+﻿using Attributes;
 using DefaultNamespace;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
@@ -28,7 +27,7 @@ public class PacaAgent : Agent
         _resetParams = Academy.Instance.EnvironmentParameters;
         _statsRecorder = Academy.Instance.StatsRecorder;
         _foodLayer = 1 << LayerMask.NameToLayer("Food");
-        
+
         Paca.World.Reset();
 
         //Reset the parameters when the Agent is reset.

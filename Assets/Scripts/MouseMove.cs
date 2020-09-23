@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MouseMove : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class MouseMove : MonoBehaviour
     private float _targetZoom;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _camera = GetComponent<Camera>();
         _targetPosition = transform.position;

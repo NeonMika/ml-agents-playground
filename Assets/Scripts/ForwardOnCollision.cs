@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ForwardOnCollision : MonoBehaviour
@@ -17,16 +15,6 @@ public class ForwardOnCollision : MonoBehaviour
     public event Action<Collider2D> OnTriggerEnter2DForward;
     public event Action<Collider2D> OnTriggerExit2DForward;
     public event Action<Collider2D> OnTriggerStay2DForward;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     private void OnCollisionEnter(Collision other)
     {
